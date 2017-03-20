@@ -1,4 +1,4 @@
-# incredifolio-app [![Build Status](https://travis-ci.org/PedroOkawa/incredifolio-app.svg?branch=develop)](https://travis-ci.org/PedroOkawa/incredifolio-app)
+# Incredifolio APP [![Build Status](https://travis-ci.org/PedroOkawa/incredifolio-app.svg?branch=develop)](https://travis-ci.org/PedroOkawa/incredifolio-app)
 
 This is an app created to store ad share "portfolios".
 
