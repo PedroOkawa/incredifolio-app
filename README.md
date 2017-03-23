@@ -1,4 +1,4 @@
-# Portfolio APP [![Build Status](https://travis-ci.org/PedroOkawa/incredifolio-app.svg?branch=develop)](https://travis-ci.org/PedroOkawa/incredifolio-app)
+# Portfolio APP [![Build Status](https://travis-ci.org/PedroOkawa/portfolio-app.svg?branch=master)](https://travis-ci.org/PedroOkawa/portfolio-app)
 
 This is an app created to store and share "portfolios".
 
