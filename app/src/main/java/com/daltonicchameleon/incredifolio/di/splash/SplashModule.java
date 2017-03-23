@@ -8,6 +8,11 @@ import com.daltonicchameleon.incredifolio.ui.splash.SplashView;
 import dagger.Module;
 import dagger.Provides;
 
+/**
+ * portfolio-app
+ * Created in 3/20/17 by the following authors:
+ * Pedro Okawa
+ */
 @Module
 public class SplashModule {
 

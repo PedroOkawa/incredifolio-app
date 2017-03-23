@@ -14,8 +14,8 @@ import com.daltonicchameleon.incredifolio.presenter.main.MainPresenter;
 import javax.inject.Inject;
 
 /**
- * incredifolio-app
- * Created in 20/03/17 by the following authors:
+ * portfolio-app
+ * Created in 3/20/17 by the following authors:
  * Pedro Okawa
  */
 public class MainActivity extends BaseActivity<ActivityMainBinding> implements MainView {
