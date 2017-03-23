@@ -12,6 +12,11 @@ import android.view.inputmethod.InputMethodManager;
 import com.daltonicchameleon.incredifolio.App;
 import com.daltonicchameleon.incredifolio.di.app.AppComponent;
 
+/**
+ * incredifolio-app
+ * Created in 20/03/17 by the following authors:
+ * Pedro Okawa
+ */
 public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatActivity {
 
     private T dataBinding;

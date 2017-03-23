@@ -12,6 +12,11 @@ import android.view.ViewGroup;
 
 import com.daltonicchameleon.incredifolio.di.app.AppComponent;
 
+/**
+ * incredifolio-app
+ * Created in 20/03/17 by the following authors:
+ * Pedro Okawa
+ */
 public abstract class BaseFragment<T extends ViewDataBinding> extends Fragment {
 
     private T dataBinding;
