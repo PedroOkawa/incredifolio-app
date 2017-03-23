@@ -1,17 +1,21 @@
 package com.daltonicchameleon.incredifolio.base;
 
-import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.inputmethod.InputMethodManager;
 
 import com.daltonicchameleon.incredifolio.App;
 import com.daltonicchameleon.incredifolio.di.app.AppComponent;
 
+/**
+ * portfolio-app
+ * Created in 3/20/17 by the following authors:
+ * Pedro Okawa
+ */
 public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatActivity {
 
     private T dataBinding;
@@ -40,9 +44,7 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
      *
      * @return layoutId
      */
-    protected abstract
-    @LayoutRes
-    int layoutToInflate();
+    protected abstract @LayoutRes int layoutToInflate();
 
     /**
      * Called when all features are initialized and loaded (databinding and Dagger components)
@@ -77,14 +79,6 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
     }
 
     /**
-     * Hides keyboard
-     */
-    private void hideKeyboard() {
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-    }
-
-    /**
      * Returns Activity data binding
      *
      * @return dataBinding
@@ -100,5 +94,14 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
      */
     public final App getApp() {
         return App.class.cast(getApplication());
+    }
+
+    /**
+     * Returns content layout to inflate fragments
+     *
+     * @return content layout
+     */
+    public @IdRes int contentViewId() {
+        return 0;
     }
 }

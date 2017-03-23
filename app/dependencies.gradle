@@ -1,23 +1,26 @@
-apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: "com.neenbedankt.android-apt"
 
 /** VERSIONS **/
 
-def versionAppCompat = "25.1.0"
+def versionAppCompat = "25.1.1"
 def versionAnnotation = "1.2"
 def versionCalligraphy = "2.2.0"
 def versionCommonsCodec = "1.9"
 def versionDagger = "2.2"
+def versionEspresso = "2.2.2"
 def versionGlide = "3.7.0"
-def versionGooglePlayServices = "10.0.1"
+def versionGooglePlayServices = "10.2.0"
 def versionGson = "2.7"
 def versionLoggingOkHttp = "3.5.0"
+def versionMockito = "2.7.19"
 def versionRetrofit = "2.1.0"
-def versionJUnit = "4.12"
+def versionRunner = "0.5"
+def versionJUnitQuickCheck = "0.8-alpha-4"
 
 dependencies {
     /** GENERAL **/
 
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(dir: "libs", include: ["*.jar"])
 
     /** APP **/
 
@@ -57,6 +60,26 @@ dependencies {
 
     /** TESTS **/
 
-    /* JUnit */
-    testCompile "junit:junit:$versionJUnit"
+    /* App Compat */
+    androidTestCompile "com.android.support:support-annotations:$versionAppCompat"
+
+    /* Espresso */
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$versionEspresso") {
+        exclude group: "com.android.support", module: "appcompat"
+        exclude group: "com.android.support", module: "support-v4"
+        exclude group: "com.android.support", module: "support-v7"
+        exclude group: "com.android.support", module: "design"
+        exclude module: "support-annotations"
+        exclude module: "recyclerview-v7"
+    }
+
+    /* JUnit Quick Check */
+    testCompile "com.pholser:junit-quickcheck-core:$versionJUnitQuickCheck"
+    testCompile "com.pholser:junit-quickcheck-generators:$versionJUnitQuickCheck"
+
+    /* Mockito */
+    compile "org.mockito:mockito-core:$versionMockito"
+
+    /* Runner */
+    androidTestCompile "com.android.support.test:runner:$versionRunner"
 }
