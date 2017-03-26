@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.daltonicchameleon.incredifolio">
+    package="com.daltonicchameleon.portfolio">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".App"
+        android:name="com.daltonicchameleon.portfolio.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +13,7 @@
         android:theme="@style/AppTheme">
 
         <!-- SPLASH -->
-        <activity android:name=".ui.splash.SplashActivity">
+        <activity android:name="com.daltonicchameleon.portfolio.ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -19,7 +21,7 @@
         </activity>
 
         <!-- MAIN -->
-        <activity android:name=".ui.main.MainActivity" />
+        <activity android:name="com.daltonicchameleon.portfolio.ui.main.MainActivity" />
 
     </application>
 

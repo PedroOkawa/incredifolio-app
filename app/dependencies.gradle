@@ -1,19 +1,17 @@
-apply plugin: "com.neenbedankt.android-apt"
-
 /** VERSIONS **/
 
 def versionAppCompat = "25.1.1"
 def versionAnnotation = "1.2"
-def versionCalligraphy = "2.2.0"
 def versionCommonsCodec = "1.9"
 def versionDagger = "2.2"
 def versionEspresso = "2.2.2"
 def versionGlide = "3.7.0"
-def versionGooglePlayServices = "10.2.0"
 def versionGson = "2.7"
 def versionLoggingOkHttp = "3.5.0"
 def versionMockito = "2.7.19"
-def versionRetrofit = "2.1.0"
+def versionRetrofit = "2.2.0"
+def versionRxJava = "1.2.9"
+def versionRxAndroid = "1.2.1"
 def versionRunner = "0.5"
 def versionJUnitQuickCheck = "0.8-alpha-4"
 
@@ -24,23 +22,17 @@ dependencies {
 
     /** APP **/
 
-    /* Analytics */
-    compile "com.google.android.gms:play-services-analytics:$versionGooglePlayServices"
-
     /* App Compat */
     compile "com.android.support:appcompat-v7:$versionAppCompat"
     compile "com.android.support:design:$versionAppCompat"
     compile "com.android.support:recyclerview-v7:$versionAppCompat"
     compile "com.android.support:support-annotations:$versionAppCompat"
 
-    /* Calligraphy */
-    compile "uk.co.chrisjenx:calligraphy:$versionCalligraphy"
-
     /* Commons Codec */
     compile "commons-codec:commons-codec:$versionCommonsCodec"
 
     /* Dagger */
-    apt "com.google.dagger:dagger-compiler:$versionDagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$versionDagger"
     compile "com.google.dagger:dagger:$versionDagger"
     provided "javax.annotation:javax.annotation-api:$versionAnnotation"
 
@@ -55,8 +47,12 @@ dependencies {
 
     /* Retrofit */
     compile "com.squareup.retrofit2:retrofit:$versionRetrofit"
-    compile "com.squareup.retrofit2:adapter-rxjava:$versionRetrofit"
     compile "com.squareup.retrofit2:converter-gson:$versionRetrofit"
+    compile "com.squareup.retrofit2:adapter-rxjava:$versionRetrofit"
+
+    /* RX */
+    compile "io.reactivex:rxandroid:$versionRxAndroid"
+    compile "io.reactivex:rxjava:$versionRxJava"
 
     /** TESTS **/
 
