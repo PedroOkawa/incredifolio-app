@@ -1,53 +1,60 @@
 package com.daltonicchameleon.portfolio.util.manager;
 
-import android.util.Log;
-
+import com.daltonicchameleon.portfolio.R;
 import com.daltonicchameleon.portfolio.model.User;
 import com.daltonicchameleon.portfolio.util.api.ApiCallback;
 import com.daltonicchameleon.portfolio.util.api.ApiService;
+import com.daltonicchameleon.portfolio.util.api.RetrofitException;
 import com.daltonicchameleon.portfolio.util.api.response.UserResponse;
+import com.daltonicchameleon.portfolio.util.helper.AccountHelper;
+import com.daltonicchameleon.portfolio.util.helper.TextHelper;
 
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * portfolio-app by Carbon by BOLD
- * Created in 3/24/17 the following authors:
- * Pedro Okawa - {pedrookawa@carbonbybold.com}
+ * portfolio-app
+ * Created in 3/24/17 by the following authors:
+ * Pedro Okawa
  */
 public class ApiManager {
 
+    private AccountHelper accountHelper;
     private ApiService apiService;
+    private TextHelper textHelper;
 
-    public ApiManager(ApiService apiService) {
+    public ApiManager(AccountHelper accountHelper, ApiService apiService, TextHelper textHelper) {
+        this.accountHelper = accountHelper;
         this.apiService = apiService;
+        this.textHelper = textHelper;
     }
 
     /** SESSION **/
 
     public void validateToken(final ApiCallback<Void> apiCallback) {
-        String tokenTest = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IlRlc3QxMjMiLCJ1c2VybmFtZSI6IlBlZHJvT2thd2EiLCJpZCI6IjU4ZDQwNzZkN2QyZTdmMWNjMjk0MGQ0NCIsImlhdCI6MTQ5MDM3MDMwNX0.OgU3TuvXjWaRsB9N3YowDOx0FbqtVHWi4kPQrnrKZXA";
-        apiService
-                .validate(tokenTest)
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Void>() {
-                    @Override
-                    public void onCompleted() {
-                        Log.w("TEST", "COMPLETE");
-                    }
+        if(hasTokenStored(apiCallback)) {
+            apiService
+                    .validate(accountHelper.getCurrentToken())
+                    .subscribeOn(Schedulers.newThread())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Observer<Void>() {
+                        @Override
+                        public void onCompleted() {
 
-                    @Override
-                    public void onError(Throwable throwable) {
-                        apiCallback.onError(throwable);
-                    }
+                        }
 
-                    @Override
-                    public void onNext(Void aVoid) {
-                        apiCallback.onComplete(aVoid);
-                    }
-                });
+                        @Override
+                        public void onError(Throwable throwable) {
+                            apiCallback.onError(throwable);
+                        }
+
+                        @Override
+                        public void onNext(Void aVoid) {
+                            apiCallback.onComplete(aVoid);
+                        }
+                    });
+        }
     }
 
     /** USER **/
@@ -80,6 +87,23 @@ public class ApiManager {
                         apiCallback.onComplete(userResponse.getUser());
                     }
                 });
+    }
+
+    /**
+     * Validates if the account and token are valid
+     *
+     * @param apiCallback
+     * @return true if there's a token associated and false otherwise
+     */
+    private boolean hasTokenStored(ApiCallback apiCallback) {
+        if(!accountHelper.hasAccount() || accountHelper.getCurrentToken() == null || accountHelper.getCurrentToken().isEmpty()) {
+            RetrofitException retrofitException = RetrofitException
+                    .unexpectedError(
+                            new NullPointerException(textHelper.convertString(R.string.error_account_not_added)));
+            apiCallback.onError(retrofitException);
+            return false;
+        }
+        return true;
     }
 
 }

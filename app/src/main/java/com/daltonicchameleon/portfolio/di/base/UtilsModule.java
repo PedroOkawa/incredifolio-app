@@ -2,6 +2,7 @@ package com.daltonicchameleon.portfolio.di.base;
 
 import com.daltonicchameleon.portfolio.App;
 import com.daltonicchameleon.portfolio.util.api.ApiService;
+import com.daltonicchameleon.portfolio.util.helper.AccountHelper;
 import com.daltonicchameleon.portfolio.util.helper.ConnectionHelper;
 import com.daltonicchameleon.portfolio.util.helper.TextHelper;
 import com.daltonicchameleon.portfolio.util.manager.ApiManager;
@@ -13,23 +14,37 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * portfolio-app by Carbon by BOLD
- * Created in 3/24/17 the following authors:
- * Pedro Okawa - {pedrookawa@carbonbybold.com}
+ * portfolio-app
+ * Created in 3/24/17 by the following authors:
+ * Pedro Okawa
  */
 @Module
 public class UtilsModule {
 
     /**
+     * Generates an account helper that handles and manages application accounts
+     *
+     * @param app
+     * @return accountHelper
+     */
+    @Singleton
+    @Provides
+    public AccountHelper providesAccountHelper(App app) {
+        return new AccountHelper(app);
+    }
+
+    /**
      * Generates an instance of the ApiManager, class that will manage api calls
      *
+     * @param accountHelper
      * @param apiService
+     * @param textHelper
      * @return ApiManager
      */
     @Singleton
     @Provides
-    public ApiManager providesApiManager(ApiService apiService) {
-        return new ApiManager(apiService);
+    public ApiManager providesApiManager(AccountHelper accountHelper, ApiService apiService, TextHelper textHelper) {
+        return new ApiManager(accountHelper, apiService, textHelper);
     }
 
     /**

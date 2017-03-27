@@ -3,9 +3,9 @@ package com.daltonicchameleon.portfolio.util.manager;
 import com.daltonicchameleon.portfolio.App;
 
 /**
- * portfolio-app by Carbon by BOLD
- * Created in 3/24/17 the following authors:
- * Pedro Okawa - {pedrookawa@carbonbybold.com}
+ * portfolio-app
+ * Created in 3/23/17 by the following authors:
+ * Pedro Okawa
  */
 public class FeedbackManager {
 

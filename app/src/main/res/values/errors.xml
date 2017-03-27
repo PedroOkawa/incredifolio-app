@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ACCOUNT -->
+    <string name="error_account_only_one_allowed">Only one account allowed</string>
+    <string name="error_account_not_added">There\'s no account associated, Register first!</string>
+
+    <!-- NETWORK -->
     <string name="error_network_general">¯\\_(ツ)_/¯\nSorry, something went wrong.</string>
 
 </resources>

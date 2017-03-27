@@ -3,9 +3,9 @@ package com.daltonicchameleon.portfolio.util.api.response;
 import com.daltonicchameleon.portfolio.model.User;
 
 /**
- * portfolio-app by Carbon by BOLD
- * Created in 3/24/17 the following authors:
- * Pedro Okawa - {pedrookawa@carbonbybold.com}
+ * portfolio-app
+ * Created in 3/24/17 by the following authors:
+ * Pedro Okawa
  */
 public class UserResponse {
 
