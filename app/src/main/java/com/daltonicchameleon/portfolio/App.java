@@ -6,8 +6,6 @@ import com.daltonicchameleon.portfolio.di.app.AppComponent;
 import com.daltonicchameleon.portfolio.di.app.AppModule;
 import com.daltonicchameleon.portfolio.di.app.DaggerAppComponent;
 
-import javax.inject.Inject;
-
 /**
  * portfolio-app
  * Created in 3/20/17 by the following authors:
@@ -15,8 +13,7 @@ import javax.inject.Inject;
  */
 public class App extends Application {
 
-    @Inject
-    AppComponent appComponent;
+    protected AppComponent appComponent;
 
     @Override
     public void onCreate() {
@@ -28,7 +25,7 @@ public class App extends Application {
     /**
      * Builds Constants component to use in each screen
      */
-    private void initializeComponent() {
+    protected void initializeComponent() {
         appComponent = DaggerAppComponent
                 .builder()
                 .appModule(new AppModule(this))

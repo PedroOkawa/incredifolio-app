@@ -20,7 +20,6 @@ public interface SplashComponent {
     void inject(SplashActivity fragment);
 
     SplashView providesSplashView();
-
     SplashPresenter providesSplashPresenter();
 
 }

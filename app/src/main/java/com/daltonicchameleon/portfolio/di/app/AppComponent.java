@@ -5,9 +5,12 @@ import com.daltonicchameleon.portfolio.di.base.ApiModule;
 import com.daltonicchameleon.portfolio.di.base.UtilsModule;
 import com.daltonicchameleon.portfolio.util.api.ApiService;
 import com.daltonicchameleon.portfolio.util.factory.RxErrorCallAdapterFactory;
+import com.daltonicchameleon.portfolio.util.helper.AccountHelper;
 import com.daltonicchameleon.portfolio.util.helper.ConnectionHelper;
+import com.daltonicchameleon.portfolio.util.helper.FileHelper;
 import com.daltonicchameleon.portfolio.util.helper.TextHelper;
 import com.daltonicchameleon.portfolio.util.manager.ApiManager;
+import com.daltonicchameleon.portfolio.util.manager.CallManager;
 import com.daltonicchameleon.portfolio.util.manager.FeedbackManager;
 import com.google.gson.Gson;
 
@@ -45,9 +48,12 @@ public interface AppComponent {
     App providesApp();
 
     /* UTILS */
+    AccountHelper providesAccountHelper();
     ApiManager providesApiManager();
+    CallManager providesCallManager();
     ConnectionHelper providesConnectionHelper();
     FeedbackManager providesFeedbackManager();
+    FileHelper providesFileHelper();
     TextHelper providesTextHelper();
 
 }

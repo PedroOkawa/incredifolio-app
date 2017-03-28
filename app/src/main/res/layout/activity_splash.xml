@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@color/color_primary_dark">
+        android:background="@color/color_background_splash">
 
         <ImageView
             android:layout_width="wrap_content"

@@ -4,6 +4,7 @@ def versionAppCompat = "25.1.1"
 def versionAnnotation = "1.2"
 def versionCommonsCodec = "1.9"
 def versionDagger = "2.2"
+def versionDexMaker = "2.2.0"
 def versionEspresso = "2.2.2"
 def versionGlide = "3.7.0"
 def versionGson = "2.7"
@@ -59,6 +60,12 @@ dependencies {
     /* App Compat */
     androidTestCompile "com.android.support:support-annotations:$versionAppCompat"
 
+    /* Dagger */
+    androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$versionDagger"
+
+    /* Dex Maker */
+    androidTestCompile "com.linkedin.dexmaker:dexmaker-mockito:$versionDexMaker"
+
     /* Espresso */
     androidTestCompile("com.android.support.test.espresso:espresso-core:$versionEspresso") {
         exclude group: "com.android.support", module: "appcompat"
@@ -74,7 +81,7 @@ dependencies {
     testCompile "com.pholser:junit-quickcheck-generators:$versionJUnitQuickCheck"
 
     /* Mockito */
-    compile "org.mockito:mockito-core:$versionMockito"
+    androidTestCompile "org.mockito:mockito-core:$versionMockito"
 
     /* Runner */
     androidTestCompile "com.android.support.test:runner:$versionRunner"

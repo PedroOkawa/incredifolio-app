@@ -1,6 +1,5 @@
 package com.daltonicchameleon.portfolio.di.app;
 
-
 import com.daltonicchameleon.portfolio.App;
 
 import javax.inject.Singleton;
@@ -22,6 +21,11 @@ public class AppModule {
         this.app = app;
     }
 
+    /**
+     * Returns an instance of the application (Singleton)
+     *
+     * @return App instance
+     */
     @Singleton
     @Provides
     public App providesApp() {

@@ -1,6 +1,6 @@
 package com.daltonicchameleon.portfolio.di.main;
 
-import com.daltonicchameleon.portfolio.di.scope.Activity;
+import com.daltonicchameleon.portfolio.di.scope.Fragment;
 import com.daltonicchameleon.portfolio.presenter.main.MainPresenter;
 import com.daltonicchameleon.portfolio.presenter.main.MainPresenterImpl;
 import com.daltonicchameleon.portfolio.ui.main.MainView;
@@ -8,11 +8,6 @@ import com.daltonicchameleon.portfolio.ui.main.MainView;
 import dagger.Module;
 import dagger.Provides;
 
-/**
- * portfolio-app
- * Created in 3/20/17 by the following authors:
- * Pedro Okawa
- */
 @Module
 public class MainModule {
 
@@ -22,13 +17,13 @@ public class MainModule {
         this.view = view;
     }
 
-    @Activity
+    @Fragment
     @Provides
     public MainView providesMainView() {
         return view;
     }
 
-    @Activity
+    @Fragment
     @Provides
     public MainPresenter providesMainPresenter(MainView mainView) {
         return new MainPresenterImpl(mainView);

@@ -15,8 +15,8 @@ public class Constants {
     public static final String API_MODULE_URL = "https://api.daltonicchameleon.com/";
     public static final String API_MODULE_DATE_FORMAT_COMPLETE = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
 
-    private static final String API_MODULE_APPLICATION_JSON = "application/json;";
-    private static final String API_MODULE_CHARSET = " charset=utf-8";
+    public static final String API_MODULE_APPLICATION_JSON = "application/json;";
+    public static final String API_MODULE_CHARSET = " charset=utf-8";
     public static final String API_MODULE_CONTENT_TYPE = API_MODULE_APPLICATION_JSON + API_MODULE_CHARSET;
 
     /** API SERVICE **/
@@ -33,12 +33,19 @@ public class Constants {
     public static final String BUNDLE_FRAGMENT = "fragment";
 
     /** CALL MANAGER **/
-    public static final int CALL_MANAGER_FLAG_TYPE_NONE = 0;
-    public static final int CALL_MANAGER_FLAG_TYPE_NEW_TASK = 1;
+    public static final int CALL_MANAGER_FLAG_TYPE_NONE = -1;
+
+    /** FILE HELPER **/
+    public static final String FILE_HELPER_BYTES_UTF8 = "UTF-8";
 
     /** HTTP STATUS CODE **/
     public static final int HTTP_STATUS_CODE_SUCCESS = 200;
     public static final int HTTP_STATUS_CODE_SUCCESS_CREATE = 201;
     public static final int HTTP_STATUS_CODE_SUCCESS_NO_CONTENT = 204;
+    public static final int HTTP_STATUS_CODE_ERROR_UNAUTHORIZED = 401;
+
+    /** TESTS **/
+    public static final String TESTS_FILE_VALIDATE_SUCCESS = "validate/success.json";
+    public static final String TESTS_FILE_VALIDATE_INVALID_TOKEN = "validate/invalid_token.json";
 
 }

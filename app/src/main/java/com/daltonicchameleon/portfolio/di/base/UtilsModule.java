@@ -4,8 +4,10 @@ import com.daltonicchameleon.portfolio.App;
 import com.daltonicchameleon.portfolio.util.api.ApiService;
 import com.daltonicchameleon.portfolio.util.helper.AccountHelper;
 import com.daltonicchameleon.portfolio.util.helper.ConnectionHelper;
+import com.daltonicchameleon.portfolio.util.helper.FileHelper;
 import com.daltonicchameleon.portfolio.util.helper.TextHelper;
 import com.daltonicchameleon.portfolio.util.manager.ApiManager;
+import com.daltonicchameleon.portfolio.util.manager.CallManager;
 import com.daltonicchameleon.portfolio.util.manager.FeedbackManager;
 
 import javax.inject.Singleton;
@@ -48,6 +50,18 @@ public class UtilsModule {
     }
 
     /**
+     * Provides manager that will handle all activities, dialogs and fragments calls
+     *
+     * @param app
+     * @return CallManager
+     */
+    @Singleton
+    @Provides
+    public CallManager providesCallManager(App app) {
+        return new CallManager(app);
+    }
+
+    /**
      * Provides an instance of a ConnectionHelper that checks the internet connection
      *
      * @return connectionHelper
@@ -69,6 +83,18 @@ public class UtilsModule {
     @Provides
     public FeedbackManager providesFeedbackManager(App app) {
         return new FeedbackManager(app);
+    }
+
+    /**
+     * Provides an instance of file helper that allows to load files from assets
+     *
+     * @param app
+     * @return fileHelper
+     */
+    @Singleton
+    @Provides
+    public FileHelper providesFileHelper(App app) {
+        return new FileHelper(app);
     }
 
     /**

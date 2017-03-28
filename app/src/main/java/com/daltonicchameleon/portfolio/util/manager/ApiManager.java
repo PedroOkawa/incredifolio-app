@@ -32,6 +32,11 @@ public class ApiManager {
 
     /** SESSION **/
 
+    /**
+     * Validates if the user's token is valid
+     *
+     * @param apiCallback
+     */
     public void validateToken(final ApiCallback<Void> apiCallback) {
         if(hasTokenStored(apiCallback)) {
             apiService
@@ -66,7 +71,7 @@ public class ApiManager {
      * @param password
      * @param apiCallback
      */
-    public void authenticateUser(String username, String password, final ApiCallback<User> apiCallback) {
+    public void authenticateUser(final String username, final String password, final ApiCallback<User> apiCallback) {
         apiService
                 .authenticateUser(username, password)
                 .subscribeOn(Schedulers.newThread())
@@ -84,6 +89,31 @@ public class ApiManager {
 
                     @Override
                     public void onNext(UserResponse userResponse) {
+                        accountHelper.addAccount(username, password, userResponse.getToken());
+                        apiCallback.onComplete(userResponse.getUser());
+                    }
+                });
+    }
+
+    public void registerUser(final String username, final String password, final ApiCallback<User> apiCallback) {
+        apiService
+                .registerUser(username, password)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<UserResponse>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable throwable) {
+                        apiCallback.onError(throwable);
+                    }
+
+                    @Override
+                    public void onNext(UserResponse userResponse) {
+                        accountHelper.addAccount(username, password, userResponse.getToken());
                         apiCallback.onComplete(userResponse.getUser());
                     }
                 });

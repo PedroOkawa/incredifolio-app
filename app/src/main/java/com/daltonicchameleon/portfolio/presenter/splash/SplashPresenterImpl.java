@@ -1,7 +1,5 @@
 package com.daltonicchameleon.portfolio.presenter.splash;
 
-import android.util.Log;
-
 import com.daltonicchameleon.portfolio.ui.splash.SplashView;
 import com.daltonicchameleon.portfolio.util.api.ApiCallback;
 import com.daltonicchameleon.portfolio.util.helper.TextHelper;
@@ -29,46 +27,19 @@ public class SplashPresenterImpl implements SplashPresenter {
         apiManager.validateToken(new ApiCallback<Void>(textHelper) {
             @Override
             protected void doOnComplete(Void aVoid) {
-                Log.d("TEST", "TOKEN IS VALID!");
+                splashview.callMain();
             }
 
             @Override
             protected void doOnError(String error) {
-                Log.d("TEST", "ERROR: " + error);
+                splashview.callLogin();
             }
 
             @Override
             protected void doOnExpired() {
-
+                splashview.callLogin();
             }
-
-//            @Override
-//            public void doOnSubscribe(Disposable disposable) {
-//                splashview.addRequestDisposable(disposable);
-//            }
         });
-
-//        apiManager.authenticateUser("PedroOkawa", "Test123", new ApiCallback<User>(textHelper) {
-//            @Override
-//            protected void doOnComplete(User user) {
-//
-//            }
-//
-//            @Override
-//            protected void doOnError(String error) {
-//
-//            }
-//
-//            @Override
-//            protected void doOnExpired() {
-//
-//            }
-//
-//            @Override
-//            public void doOnSubscribe(Disposable disposable) {
-//
-//            }
-//        });
     }
 
     @Override

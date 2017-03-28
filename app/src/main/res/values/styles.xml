@@ -1,11 +1,45 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- BASE THEME -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
+    </style>
+
+    <!-- TEXT VIEW -->
+    <style name="TextView">
+
+    </style>
+
+    <style name="TextView.Title">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">@dimen/style_title_margin</item>
+    </style>
+
+    <style name="TextView.Title.Accent">
+        <item name="android:textColor">@color/color_style_text_accent</item>
+    </style>
+
+
+    <!-- EDIT TEXT -->
+    <style name="EditText">
+        <item name="android:textSize">@dimen/style_text_size_large</item>
+        <item name="android:paddingTop">@dimen/login_form_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/login_form_vertical_padding</item>
+        <item name="android:paddingLeft">@dimen/login_form_vertical_padding</item>
+        <item name="android:paddingRight">@dimen/login_form_vertical_padding</item>
+    </style>
+
+    <style name="EditText.FormAccent">
+        <item name="android:textColor">@color/color_style_text_accent</item>
+        <item name="android:textColorHint">@color/color_style_text_accent_transparent</item>
+        <item name="android:background">@drawable/background_transparent_border_accent</item>
+        <item name="android:layout_marginTop">@dimen/login_form_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/login_form_vertical_margin</item>
+        <item name="android:layout_marginLeft">@dimen/login_form_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/login_form_horizontal_margin</item>
     </style>
 
 </resources>

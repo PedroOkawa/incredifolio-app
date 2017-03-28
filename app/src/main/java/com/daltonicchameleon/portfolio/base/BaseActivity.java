@@ -6,10 +6,14 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.daltonicchameleon.portfolio.App;
 import com.daltonicchameleon.portfolio.di.app.AppComponent;
+import com.daltonicchameleon.portfolio.util.constants.Constants;
 
 import java.util.HashSet;
 
@@ -34,6 +38,7 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
         initializesDataBinding();
         initializesComponents(getApp().getAppComponent());
         doOnCreated(savedInstanceState);
+        attachFragment();
     }
 
     @Override
@@ -89,6 +94,48 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
      */
     public T getDataBinding() {
         return dataBinding;
+    }
+
+    /**
+     * Attaches the first fragment
+     */
+    private void attachFragment() {
+        if(getSupportFragmentManager().getBackStackEntryCount() == 0 && getIntent().hasExtra(Constants.BUNDLE_FRAGMENT)) {
+            performTransaction(getInitialFragment());
+        }
+    }
+
+    /**
+     * Executes transaction to replace fragment
+     *
+     * @param fragment
+     */
+    public final void performTransaction(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(contentViewId(), fragment);
+        fragmentTransaction.commitNowAllowingStateLoss();
+    }
+
+    /**
+     * Gets initial fragment if exists
+     *
+     * @return fragment
+     */
+    @Nullable
+    private Fragment getInitialFragment() {
+        try {
+            Fragment fragment = (Fragment) Class.forName(getIntent().getStringExtra(Constants.BUNDLE_FRAGMENT)).newInstance();
+
+            if(getIntent().getExtras() != null) {
+                fragment.setArguments(getIntent().getExtras());
+            }
+
+            return fragment;
+        } catch (Exception e) {
+            Log.e(BaseActivity.class.getCanonicalName(), e.getMessage());
+        }
+
+        return null;
     }
 
     /**

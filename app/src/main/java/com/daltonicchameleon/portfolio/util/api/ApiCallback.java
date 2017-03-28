@@ -30,6 +30,11 @@ public abstract class ApiCallback<T> {
     public void onError(Throwable throwable) {
         RetrofitException retrofitException = (RetrofitException) throwable;
 
+        if(retrofitException.getType() == RetrofitException.Type.UNEXPECTED) {
+            doOnError(retrofitException.getMessage());
+            return;
+        }
+
         if(retrofitException.getType() != RetrofitException.Type.HTTP) {
             doOnError(textHelper.convertString(R.string.error_network_general));
             return;

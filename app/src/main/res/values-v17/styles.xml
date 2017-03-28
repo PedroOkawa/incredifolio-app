@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- EDIT TEXT -->
+    <style name="EditText">
+        <item name="android:textSize">@dimen/style_text_size_large</item>
+        <item name="android:paddingTop">@dimen/login_form_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/login_form_vertical_padding</item>
+        <item name="android:paddingStart">@dimen/login_form_vertical_padding</item>
+        <item name="android:paddingEnd">@dimen/login_form_vertical_padding</item>
+    </style>
+
+    <style name="EditText.FormAccent">
+        <item name="android:textColor">@color/color_style_text_accent</item>
+        <item name="android:textColorHint">@color/color_style_text_accent_transparent</item>
+        <item name="android:background">@drawable/background_transparent_border_accent</item>
+        <item name="android:layout_marginTop">@dimen/login_form_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/login_form_vertical_margin</item>
+        <item name="android:layout_marginStart">@dimen/login_form_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/login_form_horizontal_margin</item>
+    </style>
+
+</resources>

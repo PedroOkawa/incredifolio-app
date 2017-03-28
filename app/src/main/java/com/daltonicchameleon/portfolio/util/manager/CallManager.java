@@ -34,17 +34,17 @@ public class CallManager {
      * @param fragmentClazz
      * @param bundle
      * @param requestCode
-     * @param flagType
+     * @param flags
      */
-    public void open(Activity activity, Class<? extends BaseActivity> activityClazz, Class<? extends BaseFragment> fragmentClazz, Bundle bundle, Integer requestCode, int flagType) {
+    public void open(Activity activity, Class<? extends BaseActivity> activityClazz, Class<? extends BaseFragment> fragmentClazz, Bundle bundle, Integer requestCode, int flags) {
         if(activity == null) {
             throw new NullPointerException();
         }
 
         Intent intent = new Intent(activity, activityClazz);
 
-        if(flagType == Constants.CALL_MANAGER_FLAG_TYPE_NEW_TASK) {
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        if(flags != Constants.CALL_MANAGER_FLAG_TYPE_NONE) {
+            intent.setFlags(flags);
         }
 
         if(fragmentClazz != null) {
@@ -77,10 +77,10 @@ public class CallManager {
      *
      * @param activity
      * @param activityClazz
-     * @param flagType
+     * @param flags
      */
-    public void open(Activity activity, Class<? extends BaseActivity> activityClazz, int flagType) {
-        open(activity, activityClazz, null, null, null, flagType);
+    public void open(Activity activity, Class<? extends BaseActivity> activityClazz, int flags) {
+        open(activity, activityClazz, null, null, null, flags);
     }
 
     /**
@@ -100,10 +100,10 @@ public class CallManager {
      * @param activity
      * @param activityClazz
      * @param bundle
-     * @param flagType
+     * @param flags
      */
-    public void open(Activity activity, Class<? extends BaseActivity> activityClazz, Bundle bundle, int flagType) {
-        open(activity, activityClazz, null, bundle, null, flagType);
+    public void open(Activity activity, Class<? extends BaseActivity> activityClazz, Bundle bundle, int flags) {
+        open(activity, activityClazz, null, bundle, null, flags);
     }
 
     /**
@@ -147,10 +147,10 @@ public class CallManager {
      * @param activity
      * @param activityClazz
      * @param fragmentClazz
-     * @param flagType
+     * @param flags
      */
-    public void open(Activity activity, Class<? extends BaseActivity> activityClazz, Class<? extends BaseFragment> fragmentClazz, int flagType) {
-        open(activity, activityClazz, fragmentClazz, null, null, flagType);
+    public void open(Activity activity, Class<? extends BaseActivity> activityClazz, Class<? extends BaseFragment> fragmentClazz, int flags) {
+        open(activity, activityClazz, fragmentClazz, null, null, flags);
     }
 
     /**
@@ -172,10 +172,10 @@ public class CallManager {
      * @param activityClazz
      * @param fragmentClazz
      * @param bundle
-     * @param flagType
+     * @param flags
      */
-    public void open(Activity activity, Class<? extends BaseActivity> activityClazz, Class<? extends BaseFragment> fragmentClazz, Bundle bundle, int flagType) {
-        open(activity, activityClazz, fragmentClazz, bundle, null, flagType);
+    public void open(Activity activity, Class<? extends BaseActivity> activityClazz, Class<? extends BaseFragment> fragmentClazz, Bundle bundle, int flags) {
+        open(activity, activityClazz, fragmentClazz, bundle, null, flags);
     }
 
     /**

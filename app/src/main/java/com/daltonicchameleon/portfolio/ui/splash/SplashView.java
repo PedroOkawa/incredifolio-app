@@ -9,4 +9,8 @@ import com.daltonicchameleon.portfolio.databinding.ActivitySplashBinding;
  * Pedro Okawa
  */
 public interface SplashView extends BaseView<SplashActivity, ActivitySplashBinding> {
+
+    void callLogin();
+    void callMain();
+
 }
