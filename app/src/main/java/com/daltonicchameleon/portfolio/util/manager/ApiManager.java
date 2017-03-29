@@ -126,7 +126,7 @@ public class ApiManager {
      * @return true if there's a token associated and false otherwise
      */
     private boolean hasTokenStored(ApiCallback apiCallback) {
-        if(!accountHelper.hasAccount() || accountHelper.getCurrentToken() == null || accountHelper.getCurrentToken().isEmpty()) {
+        if(!accountHelper.hasToken()) {
             RetrofitException retrofitException = RetrofitException
                     .unexpectedError(
                             new NullPointerException(textHelper.convertString(R.string.error_account_not_added)));

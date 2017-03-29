@@ -1,5 +1,7 @@
 package com.daltonicchameleon.portfolio.presenter.splash;
 
+import android.util.Log;
+
 import com.daltonicchameleon.portfolio.ui.splash.SplashView;
 import com.daltonicchameleon.portfolio.util.api.ApiCallback;
 import com.daltonicchameleon.portfolio.util.helper.TextHelper;
@@ -28,16 +30,19 @@ public class SplashPresenterImpl implements SplashPresenter {
             @Override
             protected void doOnComplete(Void aVoid) {
                 splashview.callMain();
+                Log.w("TEST", "COMPLETE");
             }
 
             @Override
             protected void doOnError(String error) {
                 splashview.callLogin();
+                Log.w("TEST", "ERROR: " + error);
             }
 
             @Override
             protected void doOnExpired() {
                 splashview.callLogin();
+                Log.w("TEST", "EXPIRED");
             }
         });
     }

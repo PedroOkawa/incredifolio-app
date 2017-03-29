@@ -14,6 +14,11 @@ import static org.mockito.Mockito.mock;
  */
 public class ApiTestModule extends ApiModule {
 
+    /**
+     * Provides mocked version of the ApiService used only for test purpose.
+     * @param retrofit
+     * @return mocked apiService
+     */
     @Override
     public ApiService providesApiService(Retrofit retrofit) {
         return mock(ApiService.class);

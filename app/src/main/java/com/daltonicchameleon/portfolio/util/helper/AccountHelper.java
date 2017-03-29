@@ -138,6 +138,15 @@ public class AccountHelper {
         return accountManager.peekAuthToken(account, context.getPackageName().trim());
     }
 
+    /**
+     * Verify if there's a token stored
+     *
+     * @return true if there's a token, false otherwise
+     */
+    public boolean hasToken() {
+        return hasAccount() && getCurrentToken() != null && !getCurrentToken().isEmpty();
+    }
+
     private void validateAccountManager() {
         if (accountManager == null) {
             throw new NullPointerException("It's necessary to call AccountHelper.initialize first");

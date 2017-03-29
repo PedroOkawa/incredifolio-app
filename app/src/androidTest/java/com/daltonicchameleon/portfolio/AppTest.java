@@ -1,8 +1,9 @@
 package com.daltonicchameleon.portfolio;
 
-import com.daltonicchameleon.portfolio.di.DaggerAppTestComponent;
 import com.daltonicchameleon.portfolio.di.app.AppModule;
+import com.daltonicchameleon.portfolio.di.component.DaggerAppTestComponent;
 import com.daltonicchameleon.portfolio.di.module.ApiTestModule;
+import com.daltonicchameleon.portfolio.di.module.UtilsTestModule;
 
 /**
  * portfolio-app
@@ -17,6 +18,7 @@ public class AppTest extends App {
                 .builder()
                 .apiModule(new ApiTestModule())
                 .appModule(new AppModule(this))
+                .utilsModule(new UtilsTestModule())
                 .build();
         appComponent.inject(this);
     }
