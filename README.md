@@ -1,6 +1,6 @@
-# Portfolio APP [![Build Status](https://travis-ci.org/PedroOkawa/portfolio-app.svg?branch=develop)](https://travis-ci.org/PedroOkawa/portfolio-app)
+# Portfolio APP [![Build Status](https://travis-ci.org/PedroOkawa/portfolio-context.svg?branch=develop)](https://travis-ci.org/PedroOkawa/portfolio-context)
 
-This is an app created to store and share "portfolios".
+This is an context created to store and share "portfolios".
 
 This API allow users to:
 

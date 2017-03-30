@@ -2,12 +2,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
+        style="@style/AppTheme.Dark"
         android:id="@+id/lnrLoginContent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center"
-        android:background="@color/color_background_login">
+        android:gravity="center">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -33,6 +31,13 @@
             android:layout_height="wrap_content"
             android:hint="@string/login_password"
             android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/btnLoginSend"
+            style="@style/Button.Accent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_button_send"/>
 
     </LinearLayout>
 

@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="color_accent">@color/color_green_688801</color>
+    <color name="color_accent_transparent">@color/color_green_77688801</color>
     <color name="color_primary">@color/color_grey_616161</color>
     <color name="color_primary_dark">@color/color_grey_494444</color>
 
     <!-- BACKGROUND -->
     <color name="color_background_loading">@color/color_black_AA000000</color>
-    <color name="color_background_login">@color/color_primary_dark</color>
-    <color name="color_background_register">@color/color_primary_dark</color>
-    <color name="color_background_splash">@color/color_primary_dark</color>
+    <color name="color_background_dark">@color/color_primary_dark</color>
     <color name="color_background_transparent">@color/color_transparent_00000000</color>
 
     <!-- STROKE -->
     <color name="color_stroke_accent">@color/color_accent</color>
-
-    <!-- STYLE -->
-    <color name="color_style_text_accent">@color/color_accent</color>
-    <color name="color_style_text_accent_transparent">@color/color_green_77688801</color>
-    <color name="color_style_text_white">@color/color_white_FFFFFF</color>
 
     <!-- COLORS -->
     <color name="color_black_AA000000">#AA000000</color>

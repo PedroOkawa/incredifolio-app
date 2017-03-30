@@ -1,7 +1,5 @@
 package com.daltonicchameleon.portfolio.util.api;
 
-import android.support.annotation.StringRes;
-
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 

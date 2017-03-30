@@ -1,24 +1,23 @@
 package com.daltonicchameleon.portfolio.util.helper;
 
+import android.content.Context;
 import android.support.annotation.StringRes;
 
-import com.daltonicchameleon.portfolio.App;
-
 /**
- * portfolio-app
+ * portfolio-context
  * Created in 3/24/17 by the following authors:
  * Pedro Okawa
  */
 public class TextHelper {
 
-    private App app;
+    private Context context;
 
-    public TextHelper(App app) {
-        this.app = app;
+    public TextHelper(Context context) {
+        this.context = context;
     }
 
     public String convertString(@StringRes int stringId) {
-        return app.getString(stringId);
+        return context.getString(stringId);
     }
 
 }

@@ -1,5 +1,7 @@
 package com.daltonicchameleon.portfolio.presenter.login;
 
+import android.view.View;
+
 import com.daltonicchameleon.portfolio.ui.login.LoginView;
 
 public class LoginPresenterImpl implements LoginPresenter {
@@ -13,6 +15,13 @@ public class LoginPresenterImpl implements LoginPresenter {
     @Override
     public void initialize() {
 //        loginview.getDataBinding().setLoading(true);
+
+        loginview.getDataBinding().btnLoginSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     	/* EXECUTE STUFFS */
 

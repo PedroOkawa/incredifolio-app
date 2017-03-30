@@ -59,6 +59,7 @@ dependencies {
 
     /* App Compat */
     androidTestCompile "com.android.support:support-annotations:$versionAppCompat"
+    testCompile "com.android.support:support-annotations:$versionAppCompat"
 
     /* Dagger */
     androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$versionDagger"
@@ -82,6 +83,7 @@ dependencies {
 
     /* Mockito */
     androidTestCompile "org.mockito:mockito-core:$versionMockito"
+    testCompile "org.mockito:mockito-core:$versionMockito"
 
     /* Runner */
     androidTestCompile "com.android.support.test:runner:$versionRunner"

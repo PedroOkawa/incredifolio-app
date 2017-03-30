@@ -7,6 +7,18 @@
         <item name="colorAccent">@color/color_accent</item>
     </style>
 
+    <style name="AppTheme.Dark">
+        <item name="android:background">@color/color_background_dark</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="AppTheme.Loading">
+        <item name="android:background">@color/color_background_loading</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
     <!-- TEXT VIEW -->
     <style name="TextView">
 
@@ -19,27 +31,38 @@
     </style>
 
     <style name="TextView.Title.Accent">
-        <item name="android:textColor">@color/color_style_text_accent</item>
+        <item name="android:textColor">@color/color_accent</item>
     </style>
 
 
     <!-- EDIT TEXT -->
     <style name="EditText">
         <item name="android:textSize">@dimen/style_text_size_large</item>
-        <item name="android:paddingTop">@dimen/login_form_vertical_padding</item>
-        <item name="android:paddingBottom">@dimen/login_form_vertical_padding</item>
-        <item name="android:paddingLeft">@dimen/login_form_vertical_padding</item>
-        <item name="android:paddingRight">@dimen/login_form_vertical_padding</item>
+        <item name="android:paddingTop">@dimen/style_form_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/style_form_vertical_padding</item>
+        <item name="android:paddingLeft">@dimen/style_form_vertical_padding</item>
+        <item name="android:paddingRight">@dimen/style_form_vertical_padding</item>
     </style>
 
     <style name="EditText.FormAccent">
-        <item name="android:textColor">@color/color_style_text_accent</item>
-        <item name="android:textColorHint">@color/color_style_text_accent_transparent</item>
-        <item name="android:background">@drawable/background_transparent_border_accent</item>
-        <item name="android:layout_marginTop">@dimen/login_form_vertical_margin</item>
-        <item name="android:layout_marginBottom">@dimen/login_form_vertical_margin</item>
-        <item name="android:layout_marginLeft">@dimen/login_form_horizontal_margin</item>
-        <item name="android:layout_marginRight">@dimen/login_form_horizontal_margin</item>
+        <item name="android:textColor">@color/color_accent</item>
+        <item name="android:textColorHint">@color/color_accent_transparent</item>
+        <item name="android:background">@drawable/background_dark_border_accent</item>
+        <item name="android:layout_marginTop">@dimen/style_form_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/style_form_vertical_margin</item>
+        <item name="android:layout_marginLeft">@dimen/style_form_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/style_form_horizontal_margin</item>
+    </style>
+
+    <!-- BUTTON -->
+    <style name="Button">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_margin">@dimen/style_button_margin</item>
+    </style>
+
+    <style name="Button.Accent">
+        <item name="android:background">@drawable/button_selector_transparent_accent</item>
+        <item name="android:textColor">@drawable/text_view_selector_accent_transparent</item>
     </style>
 
 </resources>

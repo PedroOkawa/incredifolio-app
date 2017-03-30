@@ -1,0 +1,4 @@
+<resources>
+    <string name="text_helper_success">Success</string>
+    <string name="text_helper_fail">Fail</string>
+</resources>

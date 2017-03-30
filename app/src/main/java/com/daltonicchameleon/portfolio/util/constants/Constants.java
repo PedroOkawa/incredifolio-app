@@ -43,6 +43,7 @@ public class Constants {
     public static final int HTTP_STATUS_CODE_SUCCESS_CREATE = 201;
     public static final int HTTP_STATUS_CODE_SUCCESS_NO_CONTENT = 204;
     public static final int HTTP_STATUS_CODE_ERROR_UNAUTHORIZED = 401;
+    public static final int HTTP_STATUS_CODE_ERROR_INTERNAL = 500;
 
     /** TESTS **/
     public static final String TESTS_FILE_VALIDATE_SUCCESS = "validate/success.json";

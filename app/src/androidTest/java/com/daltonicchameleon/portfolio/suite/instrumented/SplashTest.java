@@ -1,4 +1,4 @@
-package com.daltonicchameleon.portfolio.suite;
+package com.daltonicchameleon.portfolio.suite.instrumented;
 
 import android.app.Instrumentation;
 import android.support.test.InstrumentationRegistry;
@@ -27,11 +27,6 @@ import rx.Observable;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
-/**
- * Instrumentation test, which will execute on an Android device.
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class SplashTest {
@@ -96,6 +91,24 @@ public class SplashTest {
                 .then(testHelper.generatesErrorFromAssets(
                         Constants.TESTS_FILE_VALIDATE_INVALID_TOKEN,
                         Constants.HTTP_STATUS_CODE_ERROR_UNAUTHORIZED));
+
+        /* Launch the activity */
+        activityRule.launchActivity(null);
+
+        /* Stops the application for a small delay */
+        testHelper.startSmallDelay();
+
+        /* Validates if the current layout shown is the login screen */
+        testHelper.validateViewVisibility(R.id.lnrLoginContent);
+    }
+
+    /**
+     * Calls validates token requests with an error calling login fragment afterwards
+     */
+    @Test
+    public void notRegistered() {
+        /* Associates to always return false on token stored validation */
+        when(accountHelper.hasToken()).thenReturn(false);
 
         /* Launch the activity */
         activityRule.launchActivity(null);
