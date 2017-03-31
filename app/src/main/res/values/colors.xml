@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="color_accent">@color/color_green_688801</color>
+    <color name="color_accent_dark">@color/color_green_557700</color>
     <color name="color_accent_transparent">@color/color_green_77688801</color>
     <color name="color_primary">@color/color_grey_616161</color>
     <color name="color_primary_dark">@color/color_grey_494444</color>
@@ -16,6 +17,7 @@
     <!-- COLORS -->
     <color name="color_black_AA000000">#AA000000</color>
     <color name="color_green_688801">#688801</color>
+    <color name="color_green_557700">#557700</color>
     <color name="color_green_77688801">#77688801</color>
     <color name="color_grey_616161">#616161</color>
     <color name="color_grey_494444">#494444</color>

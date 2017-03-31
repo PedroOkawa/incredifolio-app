@@ -12,16 +12,16 @@
         style="@style/AppTheme.Dark">
 
         <LinearLayout
-            android:id="@+id/lnrLoginHeader"
+            android:id="@+id/lnrRegisterHeader"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/login_header_margin"
+            android:layout_margin="@dimen/register_header_margin"
             android:gravity="center"
             android:layout_centerHorizontal="true">
 
             <ImageView
-                android:id="@+id/imgLoginLogo"
+                android:id="@+id/imgRegisterLogo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_logo"/>
@@ -33,17 +33,17 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/lnrLoginContent"
+            android:id="@+id/lnrRegisterContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_centerInParent="true"
-            android:layout_above="@+id/lnrLoginFooter"
-            android:layout_below="@+id/lnrLoginHeader"
+            android:layout_above="@+id/btnRegisterSend"
+            android:layout_below="@+id/lnrRegisterHeader"
             android:gravity="center">
 
             <EditText
-                android:id="@+id/edtLoginUsername"
+                android:id="@+id/edtRegisterUsername"
                 style="@style/EditText.FormAccent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,37 +51,30 @@
                 android:inputType="text"/>
 
             <EditText
-                android:id="@+id/edtLoginPassword"
+                android:id="@+id/edtRegisterPassword"
                 style="@style/EditText.FormAccent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
                 android:inputType="textPassword"/>
 
+            <EditText
+                android:id="@+id/edtRegisterRetypePassword"
+                style="@style/EditText.FormAccent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/retype_password"
+                android:inputType="textPassword"/>
+
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/lnrLoginFooter"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/btnRegisterSend"
+            style="@style/Button.Accent"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_margin="@dimen/login_footer_margin">
-
-            <Button
-                android:id="@+id/btnLoginSend"
-                style="@style/Button.Accent"
-                android:text="@string/login_button_send"/>
-
-            <TextView
-                android:id="@+id/txtLoginRegister"
-                style="@style/TextView.Title.Link"
-                android:gravity="center"
-                android:text="@string/login_register"/>
-
-        </LinearLayout>
+            android:layout_margin="@dimen/register_footer_margin"
+            android:text="@string/register_button_send"/>
 
         <include
             layout="@layout/view_loading"

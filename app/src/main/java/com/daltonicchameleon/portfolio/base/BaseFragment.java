@@ -12,8 +12,6 @@ import android.view.ViewGroup;
 
 import com.daltonicchameleon.portfolio.di.app.AppComponent;
 
-import java.util.HashSet;
-
 /**
  * portfolio-app
  * Created in 3/20/17 by the following authors:
@@ -39,7 +37,7 @@ public abstract class BaseFragment<T extends ViewDataBinding> extends Fragment {
 
     @Override
     public void onDestroyView() {
-        cancelAllRequests();
+        dispose();
         dataBinding.unbind();
         super.onDestroyView();
     }
@@ -57,6 +55,11 @@ public abstract class BaseFragment<T extends ViewDataBinding> extends Fragment {
      * @param savedInstanceState
      */
     protected abstract void doOnCreated(@Nullable Bundle savedInstanceState);
+
+    /**
+     * Dispose fragment
+     */
+    protected abstract void dispose();
 
     /**
      * Initializes fragment's arguments
@@ -109,17 +112,4 @@ public abstract class BaseFragment<T extends ViewDataBinding> extends Fragment {
 //    public void addRequestDisposable(Disposable disposable) {
 //        disposables.add(disposable);
 //    }
-
-    /**
-     * Cancels all requests
-     */
-    private void cancelAllRequests() {
-//        for(Disposable disposable : disposables) {
-//            if(!disposable.isDisposed()) {
-//                disposable.dispose();
-//            }
-//        }
-//
-//        disposables.clear();
-    }
 }

@@ -4,6 +4,8 @@ import com.daltonicchameleon.portfolio.di.scope.Fragment;
 import com.daltonicchameleon.portfolio.presenter.login.LoginPresenter;
 import com.daltonicchameleon.portfolio.presenter.login.LoginPresenterImpl;
 import com.daltonicchameleon.portfolio.ui.login.LoginView;
+import com.daltonicchameleon.portfolio.util.helper.TextHelper;
+import com.daltonicchameleon.portfolio.util.manager.ApiManager;
 
 import dagger.Module;
 import dagger.Provides;
@@ -25,8 +27,8 @@ public class LoginModule {
 
     @Fragment
     @Provides
-    public LoginPresenter providesLoginPresenter(LoginView loginView) {
-        return new LoginPresenterImpl(loginView);
+    public LoginPresenter providesLoginPresenter(ApiManager apiManager, LoginView loginView, TextHelper textHelper) {
+        return new LoginPresenterImpl(apiManager, loginView, textHelper);
     }
 
 }

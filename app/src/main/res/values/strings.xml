@@ -1,9 +1,15 @@
 <resources>
     <!-- BASE -->
     <string name="app_name">Portfolio APP</string>
+    <string name="password">Password</string>
+    <string name="retype_password">Retype password</string>
+    <string name="username">Username</string>
 
     <!-- LOGIN -->
-    <string name="login_username">Username</string>
-    <string name="login_password">Password</string>
     <string name="login_button_send">Login</string>
+    <string name="login_register">Don\'t you have an account?\nRegister</string>
+
+    <!-- REGISTER -->
+    <string name="register_button_send">Register</string>
+
 </resources>

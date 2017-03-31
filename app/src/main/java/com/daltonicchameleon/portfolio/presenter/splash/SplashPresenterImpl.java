@@ -1,7 +1,10 @@
 package com.daltonicchameleon.portfolio.presenter.splash;
 
+import android.os.Handler;
+
 import com.daltonicchameleon.portfolio.ui.splash.SplashView;
 import com.daltonicchameleon.portfolio.util.api.ApiCallback;
+import com.daltonicchameleon.portfolio.util.constants.Constants;
 import com.daltonicchameleon.portfolio.util.helper.TextHelper;
 import com.daltonicchameleon.portfolio.util.manager.ApiManager;
 
@@ -24,27 +27,41 @@ public class SplashPresenterImpl implements SplashPresenter {
 
     @Override
     public void initialize() {
-        apiManager.validateToken(new ApiCallback<Void>(textHelper) {
-            @Override
-            protected void doOnComplete(Void aVoid) {
-                splashview.callMain();
-            }
+        Handler handler = new Handler();
 
+        handler.postDelayed(new Runnable() {
             @Override
-            protected void doOnError(String error) {
-                splashview.callLogin();
+            public void run() {
+                apiManager.validateToken(new AuthenticateCallback());
             }
-
-            @Override
-            protected void doOnExpired() {
-                splashview.callLogin();
-            }
-        });
+        }, Constants.SPLASH_DELAY);
     }
 
     @Override
     public void dispose() {
-        /* DESTROY ALL INSTANCES */
+
+    }
+
+    private class AuthenticateCallback extends ApiCallback<Void> {
+
+        public AuthenticateCallback() {
+            super(textHelper);
+        }
+
+        @Override
+        protected void doOnComplete(Void aVoid) {
+            splashview.callMain();
+        }
+
+        @Override
+        protected void doOnError(String error) {
+            splashview.callLogin();
+        }
+
+        @Override
+        protected void doOnExpired() {
+            splashview.callLogin();
+        }
     }
 
 }

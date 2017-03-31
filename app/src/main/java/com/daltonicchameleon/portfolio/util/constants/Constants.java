@@ -45,6 +45,9 @@ public class Constants {
     public static final int HTTP_STATUS_CODE_ERROR_UNAUTHORIZED = 401;
     public static final int HTTP_STATUS_CODE_ERROR_INTERNAL = 500;
 
+    /** SPLASH **/
+    public static final int SPLASH_DELAY = 2500;
+
     /** TESTS **/
     public static final String TESTS_FILE_VALIDATE_SUCCESS = "validate/success.json";
     public static final String TESTS_FILE_VALIDATE_INVALID_TOKEN = "validate/invalid_token.json";

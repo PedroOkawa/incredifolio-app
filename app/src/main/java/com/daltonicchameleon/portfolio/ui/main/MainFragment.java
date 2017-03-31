@@ -7,8 +7,8 @@ import com.daltonicchameleon.portfolio.R;
 import com.daltonicchameleon.portfolio.base.BaseFragment;
 import com.daltonicchameleon.portfolio.databinding.FragmentMainBinding;
 import com.daltonicchameleon.portfolio.di.app.AppComponent;
-import com.daltonicchameleon.portfolio.di.main.MainModule;
 import com.daltonicchameleon.portfolio.di.main.DaggerMainComponent;
+import com.daltonicchameleon.portfolio.di.main.MainModule;
 import com.daltonicchameleon.portfolio.presenter.main.MainPresenter;
 
 import javax.inject.Inject;
@@ -41,6 +41,11 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements M
     @Override
     protected void doOnCreated(@Nullable Bundle savedInstanceState) {
         mainPresenter.initialize();
+    }
+
+    @Override
+    protected void dispose() {
+        mainPresenter.dispose();
     }
 
 }

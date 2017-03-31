@@ -25,6 +25,8 @@
     </style>
 
     <style name="TextView.Title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_margin">@dimen/style_title_margin</item>
@@ -32,6 +34,10 @@
 
     <style name="TextView.Title.Accent">
         <item name="android:textColor">@color/color_accent</item>
+    </style>
+
+    <style name="TextView.Title.Link">
+        <item name="android:textColor">@drawable/text_view_selector_accent_accent_dark</item>
     </style>
 
 
@@ -56,13 +62,15 @@
 
     <!-- BUTTON -->
     <style name="Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:layout_margin">@dimen/style_button_margin</item>
     </style>
 
     <style name="Button.Accent">
         <item name="android:background">@drawable/button_selector_transparent_accent</item>
-        <item name="android:textColor">@drawable/text_view_selector_accent_transparent</item>
+        <item name="android:textColor">@drawable/text_view_selector_accent_primary_dark</item>
     </style>
 
 </resources>
