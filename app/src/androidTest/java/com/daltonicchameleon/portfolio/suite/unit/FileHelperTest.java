@@ -25,7 +25,7 @@ import static org.junit.Assert.assertNotNull;
  */
 @RunWith(AndroidJUnit4.class)
 @SmallTest
-public class FileHelperUnitTest {
+public class FileHelperTest {
 
     @Inject
     FileHelper fileHelper;
@@ -35,7 +35,7 @@ public class FileHelperUnitTest {
         Instrumentation instrumentation = InstrumentationRegistry.getInstrumentation();
         AppTest appTest = AppTest.class.cast(instrumentation.getTargetContext().getApplicationContext());
         DaggerAppTestComponent daggerAppTestComponent = DaggerAppTestComponent.class.cast(appTest.getAppComponent());
-        daggerAppTestComponent.inject(FileHelperUnitTest.this);
+        daggerAppTestComponent.inject(this);
     }
 
     @Test

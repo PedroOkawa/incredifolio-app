@@ -6,7 +6,8 @@ import com.daltonicchameleon.portfolio.di.base.ApiModule;
 import com.daltonicchameleon.portfolio.di.base.UtilsModule;
 import com.daltonicchameleon.portfolio.di.module.TestModule;
 import com.daltonicchameleon.portfolio.suite.instrumented.SplashTest;
-import com.daltonicchameleon.portfolio.suite.unit.FileHelperUnitTest;
+import com.daltonicchameleon.portfolio.suite.unit.AccountHelperTest;
+import com.daltonicchameleon.portfolio.suite.unit.FileHelperTest;
 import com.daltonicchameleon.portfolio.util.TestHelper;
 
 import javax.inject.Singleton;
@@ -31,7 +32,8 @@ public interface AppTestComponent extends AppComponent {
     void inject(SplashTest splashTest);
 
     /* UNIT TESTS */
-    void inject(FileHelperUnitTest fileHelperUnitTest);
+    void inject(AccountHelperTest accountHelperTest);
+    void inject(FileHelperTest fileHelperTest);
 
     /* UTILS */
     TestHelper providesTestHelper();

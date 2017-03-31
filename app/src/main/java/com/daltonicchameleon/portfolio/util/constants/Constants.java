@@ -48,8 +48,13 @@ public class Constants {
     /** TESTS **/
     public static final String TESTS_FILE_VALIDATE_SUCCESS = "validate/success.json";
     public static final String TESTS_FILE_VALIDATE_INVALID_TOKEN = "validate/invalid_token.json";
+
     public static final int TESTS_DELAY_SMALL = 1000;
     public static final int TESTS_DELAY_MEDIUM = 2500;
     public static final int TESTS_DELAY_LARGE = 5000;
+
+    public static final String TESTS_ACCOUNT_NAME = "name";
+    public static final String TESTS_ACCOUNT_PASSWORD = "password";
+    public static final String TESTS_ACCOUNT_TOKEN = "token";
 
 }

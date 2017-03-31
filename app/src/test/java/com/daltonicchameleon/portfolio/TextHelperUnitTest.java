@@ -23,9 +23,9 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class TextHelperUnitTest {
 
-    private final String textHelperSuccess = "Success";
-    private final String textHelperFailRight = "Fail";
-    private final String textHelperFailWrong = "Fail#";
+    private static final String textHelperSuccess = "Success";
+    private static final String textHelperFailRight = "Fail";
+    private static final String textHelperFailWrong = "Fail#";
 
     private Context context;
     private TextHelper textHelper;

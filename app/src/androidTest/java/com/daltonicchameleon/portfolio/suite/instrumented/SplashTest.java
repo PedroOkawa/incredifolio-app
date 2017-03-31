@@ -2,6 +2,8 @@ package com.daltonicchameleon.portfolio.suite.instrumented;
 
 import android.app.Instrumentation;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.espresso.Espresso;
+import android.support.test.espresso.idling.CountingIdlingResource;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -15,6 +17,7 @@ import com.daltonicchameleon.portfolio.util.api.ApiService;
 import com.daltonicchameleon.portfolio.util.constants.Constants;
 import com.daltonicchameleon.portfolio.util.helper.AccountHelper;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -38,6 +41,9 @@ public class SplashTest {
     @Inject
     TestHelper testHelper;
 
+    private AccountsListener accountsListener;
+    private CountingIdlingResource countingIdlingResource;
+
     @Rule
     public ActivityTestRule<SplashActivity> activityRule = new ActivityTestRule<>(SplashActivity.class, true, false);
 
@@ -46,7 +52,7 @@ public class SplashTest {
         Instrumentation instrumentation = InstrumentationRegistry.getInstrumentation();
         AppTest appTest = AppTest.class.cast(instrumentation.getTargetContext().getApplicationContext());
         DaggerAppTestComponent daggerAppTestComponent = DaggerAppTestComponent.class.cast(appTest.getAppComponent());
-        daggerAppTestComponent.inject(SplashTest.this);
+        daggerAppTestComponent.inject(this);
     }
 
     /* SUCCESS CASES */
@@ -56,9 +62,7 @@ public class SplashTest {
      */
     @Test
     public void validToken() {
-        /* Associates to always return true when checking if there's a token stored */
-        when(accountHelper.hasToken()).thenReturn(true);
-        when(accountHelper.getCurrentToken()).thenReturn("token");
+        accountHelper.addAccount(Constants.TESTS_ACCOUNT_NAME, Constants.TESTS_ACCOUNT_PASSWORD, Constants.TESTS_ACCOUNT_TOKEN);
 
         Void value = null;
 
@@ -82,9 +86,7 @@ public class SplashTest {
      */
     @Test
     public void invalidToken() {
-        /* Associates to always return true when checking if there's a token stored */
-        when(accountHelper.hasToken()).thenReturn(true);
-        when(accountHelper.getCurrentToken()).thenReturn("token");
+        accountHelper.addAccount(Constants.TESTS_ACCOUNT_NAME, Constants.TESTS_ACCOUNT_PASSWORD, Constants.TESTS_ACCOUNT_TOKEN);
 
         /* Associates an answer to the 'validate' api request */
         when(apiService.validate(anyString()))
@@ -107,9 +109,6 @@ public class SplashTest {
      */
     @Test
     public void notRegistered() {
-        /* Associates to always return false on token stored validation */
-        when(accountHelper.hasToken()).thenReturn(false);
-
         /* Launch the activity */
         activityRule.launchActivity(null);
 
@@ -118,5 +117,23 @@ public class SplashTest {
 
         /* Validates if the current layout shown is the login screen */
         testHelper.validateViewVisibility(R.id.lnrLoginContent);
+    }
+
+    @After
+    public void dispose() {
+        accountsListener = new AccountsListener();
+        countingIdlingResource = new CountingIdlingResource(SplashTest.class.getCanonicalName());
+        Espresso.registerIdlingResources(countingIdlingResource);
+
+        accountHelper.clearAccounts(accountsListener);
+    }
+
+    private class AccountsListener implements AccountHelper.OnAccountListener {
+
+        @Override
+        public void onFinished() {
+            countingIdlingResource.increment();
+            Espresso.unregisterIdlingResources(countingIdlingResource);
+        }
     }
 }
