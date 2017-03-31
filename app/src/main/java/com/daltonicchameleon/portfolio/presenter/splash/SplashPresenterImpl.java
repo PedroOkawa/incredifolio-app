@@ -34,7 +34,7 @@ public class SplashPresenterImpl implements SplashPresenter {
             public void run() {
                 apiManager.validateToken(new AuthenticateCallback());
             }
-        }, Constants.SPLASH_DELAY);
+        }, Constants.DELAY_MEDIUM);
     }
 
     @Override

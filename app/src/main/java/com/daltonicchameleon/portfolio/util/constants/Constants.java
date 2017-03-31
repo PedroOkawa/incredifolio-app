@@ -35,6 +35,11 @@ public class Constants {
     /** CALL MANAGER **/
     public static final int CALL_MANAGER_FLAG_TYPE_NONE = -1;
 
+    /** DELAY **/
+    public static final int DELAY_SMALL = 1000;
+    public static final int DELAY_MEDIUM = 2500;
+    public static final int DELAY_LARGE = 5000;
+
     /** FILE HELPER **/
     public static final String FILE_HELPER_BYTES_UTF8 = "UTF-8";
 
@@ -45,16 +50,9 @@ public class Constants {
     public static final int HTTP_STATUS_CODE_ERROR_UNAUTHORIZED = 401;
     public static final int HTTP_STATUS_CODE_ERROR_INTERNAL = 500;
 
-    /** SPLASH **/
-    public static final int SPLASH_DELAY = 2500;
-
     /** TESTS **/
     public static final String TESTS_FILE_VALIDATE_SUCCESS = "validate/success.json";
     public static final String TESTS_FILE_VALIDATE_INVALID_TOKEN = "validate/invalid_token.json";
-
-    public static final int TESTS_DELAY_SMALL = 1000;
-    public static final int TESTS_DELAY_MEDIUM = 2500;
-    public static final int TESTS_DELAY_LARGE = 5000;
 
     public static final String TESTS_ACCOUNT_NAME = "name";
     public static final String TESTS_ACCOUNT_PASSWORD = "password";

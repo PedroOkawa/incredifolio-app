@@ -73,7 +73,7 @@ public class SplashTest {
         activityRule.launchActivity(null);
 
         /* Stops the application for a small delay */
-        testHelper.startSmallDelay();
+        testHelper.startMediumDelay();
 
         /* Validates if the current layout shown is the main screen */
         testHelper.validateViewVisibility(R.id.lnrMainContent);
@@ -98,7 +98,7 @@ public class SplashTest {
         activityRule.launchActivity(null);
 
         /* Stops the application for a small delay */
-        testHelper.startSmallDelay();
+        testHelper.startMediumDelay();
 
         /* Validates if the current layout shown is the login screen */
         testHelper.validateViewVisibility(R.id.lnrLoginContent);
@@ -113,7 +113,7 @@ public class SplashTest {
         activityRule.launchActivity(null);
 
         /* Stops the application for a small delay */
-        testHelper.startSmallDelay();
+        testHelper.startMediumDelay();
 
         /* Validates if the current layout shown is the login screen */
         testHelper.validateViewVisibility(R.id.lnrLoginContent);

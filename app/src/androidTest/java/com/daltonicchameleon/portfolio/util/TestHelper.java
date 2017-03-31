@@ -76,24 +76,24 @@ public class TestHelper {
     }
 
     /**
-     * Stops the application for {@value Constants#TESTS_DELAY_SMALL} milliseconds
+     * Stops the application for {@value Constants#DELAY_SMALL} milliseconds
      */
     public void startSmallDelay() {
-        sleep(Constants.TESTS_DELAY_SMALL);
+        sleep(Constants.DELAY_SMALL);
     }
 
     /**
-     * Stops the application for {@value Constants#TESTS_DELAY_MEDIUM} milliseconds
+     * Stops the application for {@value Constants#DELAY_MEDIUM} milliseconds
      */
     public void startMediumDelay() {
-        sleep(Constants.TESTS_DELAY_MEDIUM);
+        sleep(Constants.DELAY_MEDIUM);
     }
 
     /**
-     * Stops the application for {@value Constants#TESTS_DELAY_LARGE} milliseconds
+     * Stops the application for {@value Constants#DELAY_LARGE} milliseconds
      */
     public void startLargeDelay() {
-        sleep(Constants.TESTS_DELAY_LARGE);
+        sleep(Constants.DELAY_LARGE);
     }
 
     /**
