@@ -1,14 +1,13 @@
 package com.daltonicchameleon.portfolio.util.constants;
 
+import android.support.annotation.IdRes;
+
 /**
  * portfolio-app
  * Created in 3/23/17 by the following authors:
  * Pedro Okawa
  */
 public class Constants {
-
-    /** API STATUS CODES **/
-    public static final int API_STATUS_CODE_EXPIRED = 5009;
 
     /** API MODULE **/
     public static final int API_MODULE_TIMEOUT = 60;
@@ -26,6 +25,9 @@ public class Constants {
     public static final String API_SERVICE_FIELD_USERNAME = "username";
     public static final String API_SERVICE_FIELD_PASSWORD = "password";
 
+    public static final String API_SERVICE_QUERY_PER_PAGE = "perPage";
+    public static final String API_SERVICE_QUERY_START_DATE = "startDate";
+
     /** BASE DIALOG **/
     public static final float BASE_DIALOG_WIDTH_PERCENTAGE = 0.9f;
 
@@ -42,6 +44,9 @@ public class Constants {
 
     /** FILE HELPER **/
     public static final String FILE_HELPER_BYTES_UTF8 = "UTF-8";
+
+    /** FORM HELPER **/
+    public static final @IdRes int UNDEFINED_ID = -1;
 
     /** HTTP STATUS CODE **/
     public static final int HTTP_STATUS_CODE_SUCCESS = 200;

@@ -8,6 +8,7 @@ import com.daltonicchameleon.portfolio.util.factory.RxErrorCallAdapterFactory;
 import com.daltonicchameleon.portfolio.util.helper.AccountHelper;
 import com.daltonicchameleon.portfolio.util.helper.ConnectionHelper;
 import com.daltonicchameleon.portfolio.util.helper.FileHelper;
+import com.daltonicchameleon.portfolio.util.helper.FormHelper;
 import com.daltonicchameleon.portfolio.util.helper.TextHelper;
 import com.daltonicchameleon.portfolio.util.manager.ApiManager;
 import com.daltonicchameleon.portfolio.util.manager.CallManager;
@@ -54,6 +55,7 @@ public interface AppComponent {
     ConnectionHelper providesConnectionHelper();
     FeedbackManager providesFeedbackManager();
     FileHelper providesFileHelper();
+    FormHelper providesFormHelper();
     TextHelper providesTextHelper();
 
 }

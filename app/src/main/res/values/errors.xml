@@ -4,7 +4,12 @@
     <string name="error_account_only_one_allowed">Only one account allowed</string>
     <string name="error_account_not_added">There\'s no account associated, Register first!</string>
 
-    <!-- NETWORK -->
-    <string name="error_network_general">¯\\_(ツ)_/¯\nSorry, something went wrong.</string>
+    <!-- LOGIN / REGISTER -->
+    <string name="error_login_register_provide_username">You must provide an username</string>
+    <string name="error_login_register_provide_password">You must provide a password</string>
+    <string name="error_login_register_match_password">Given passwords doesn\'t match</string>
+
+    <!-- GENERAL -->
+    <string name="error_general">¯\\_(ツ)_/¯\nSorry, something went wrong.</string>
 
 </resources>

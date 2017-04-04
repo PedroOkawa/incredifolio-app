@@ -1,9 +1,5 @@
 package com.daltonicchameleon.portfolio.util.api;
 
-import com.daltonicchameleon.portfolio.R;
-import com.daltonicchameleon.portfolio.util.constants.Constants;
-import com.daltonicchameleon.portfolio.util.helper.TextHelper;
-
 import java.io.IOException;
 
 /**
@@ -13,15 +9,8 @@ import java.io.IOException;
  */
 public abstract class ApiCallback<T> {
 
-    private TextHelper textHelper;
-
-    public ApiCallback(TextHelper textHelper) {
-        this.textHelper = textHelper;
-    }
-
     protected abstract void doOnComplete(T t);
     protected abstract void doOnError(String error);
-    protected abstract void doOnExpired();
 
     public void onComplete(T t) {
         doOnComplete(t);
@@ -36,18 +25,12 @@ public abstract class ApiCallback<T> {
         }
 
         if(retrofitException.getType() != RetrofitException.Type.HTTP) {
-            doOnError(textHelper.convertString(R.string.error_network_general));
+            doOnError(throwable.getMessage());
             return;
         }
 
         try {
             ApiError apiError = convertApiError(retrofitException);
-
-            if(apiError.getCode() == Constants.API_STATUS_CODE_EXPIRED) {
-                doOnExpired();
-                return;
-            }
-
             doOnError(apiError.getMessage());
             return;
         } catch (IOException e) {

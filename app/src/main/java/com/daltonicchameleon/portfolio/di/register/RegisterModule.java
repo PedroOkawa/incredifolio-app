@@ -4,8 +4,9 @@ import com.daltonicchameleon.portfolio.di.scope.Fragment;
 import com.daltonicchameleon.portfolio.presenter.register.RegisterPresenter;
 import com.daltonicchameleon.portfolio.presenter.register.RegisterPresenterImpl;
 import com.daltonicchameleon.portfolio.ui.register.RegisterView;
-import com.daltonicchameleon.portfolio.util.helper.TextHelper;
+import com.daltonicchameleon.portfolio.util.helper.FormHelper;
 import com.daltonicchameleon.portfolio.util.manager.ApiManager;
+import com.daltonicchameleon.portfolio.util.manager.FeedbackManager;
 
 import dagger.Module;
 import dagger.Provides;
@@ -27,8 +28,8 @@ public class RegisterModule {
 
     @Fragment
     @Provides
-    public RegisterPresenter providesRegisterPresenter(ApiManager apiManager, RegisterView registerView, TextHelper textHelper) {
-        return new RegisterPresenterImpl(apiManager, registerView, textHelper);
+    public RegisterPresenter providesRegisterPresenter(ApiManager apiManager, FeedbackManager feedbackManager, FormHelper formHelper, RegisterView registerView) {
+        return new RegisterPresenterImpl(apiManager, feedbackManager, formHelper, registerView);
     }
 
 }

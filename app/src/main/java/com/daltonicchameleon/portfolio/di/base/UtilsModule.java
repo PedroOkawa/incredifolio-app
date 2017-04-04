@@ -5,6 +5,7 @@ import com.daltonicchameleon.portfolio.util.api.ApiService;
 import com.daltonicchameleon.portfolio.util.helper.AccountHelper;
 import com.daltonicchameleon.portfolio.util.helper.ConnectionHelper;
 import com.daltonicchameleon.portfolio.util.helper.FileHelper;
+import com.daltonicchameleon.portfolio.util.helper.FormHelper;
 import com.daltonicchameleon.portfolio.util.helper.TextHelper;
 import com.daltonicchameleon.portfolio.util.manager.ApiManager;
 import com.daltonicchameleon.portfolio.util.manager.CallManager;
@@ -95,6 +96,17 @@ public class UtilsModule {
     @Provides
     public FileHelper providesFileHelper(App app) {
         return new FileHelper(app);
+    }
+
+    /**
+     * Provides an instance of form helper that validates form values
+     *
+     * @return formHelper
+     */
+    @Singleton
+    @Provides
+    public FormHelper providesFormHelper() {
+        return new FormHelper();
     }
 
     /**

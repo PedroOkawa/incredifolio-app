@@ -4,7 +4,6 @@ import com.daltonicchameleon.portfolio.di.scope.Activity;
 import com.daltonicchameleon.portfolio.presenter.splash.SplashPresenter;
 import com.daltonicchameleon.portfolio.presenter.splash.SplashPresenterImpl;
 import com.daltonicchameleon.portfolio.ui.splash.SplashView;
-import com.daltonicchameleon.portfolio.util.helper.TextHelper;
 import com.daltonicchameleon.portfolio.util.manager.ApiManager;
 
 import dagger.Module;
@@ -32,8 +31,8 @@ public class SplashModule {
 
     @Activity
     @Provides
-    public SplashPresenter providesSplashPresenter(ApiManager apiManager, SplashView splashView, TextHelper textHelper) {
-        return new SplashPresenterImpl(apiManager, splashView, textHelper);
+    public SplashPresenter providesSplashPresenter(ApiManager apiManager, SplashView splashView) {
+        return new SplashPresenterImpl(apiManager, splashView);
     }
 
 }

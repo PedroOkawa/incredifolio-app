@@ -5,7 +5,6 @@ import android.os.Handler;
 import com.daltonicchameleon.portfolio.ui.splash.SplashView;
 import com.daltonicchameleon.portfolio.util.api.ApiCallback;
 import com.daltonicchameleon.portfolio.util.constants.Constants;
-import com.daltonicchameleon.portfolio.util.helper.TextHelper;
 import com.daltonicchameleon.portfolio.util.manager.ApiManager;
 
 /**
@@ -17,12 +16,10 @@ public class SplashPresenterImpl implements SplashPresenter {
 
     private ApiManager apiManager;
     private SplashView splashview;
-    private TextHelper textHelper;
 
-    public SplashPresenterImpl(ApiManager apiManager, SplashView splashview, TextHelper textHelper) {
+    public SplashPresenterImpl(ApiManager apiManager, SplashView splashview) {
         this.apiManager = apiManager;
         this.splashview = splashview;
-        this.textHelper = textHelper;
     }
 
     @Override
@@ -44,10 +41,6 @@ public class SplashPresenterImpl implements SplashPresenter {
 
     private class AuthenticateCallback extends ApiCallback<Void> {
 
-        public AuthenticateCallback() {
-            super(textHelper);
-        }
-
         @Override
         protected void doOnComplete(Void aVoid) {
             splashview.callMain();
@@ -55,11 +48,6 @@ public class SplashPresenterImpl implements SplashPresenter {
 
         @Override
         protected void doOnError(String error) {
-            splashview.callLogin();
-        }
-
-        @Override
-        protected void doOnExpired() {
             splashview.callLogin();
         }
     }

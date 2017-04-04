@@ -11,6 +11,7 @@ import com.daltonicchameleon.portfolio.di.app.AppComponent;
 import com.daltonicchameleon.portfolio.di.register.DaggerRegisterComponent;
 import com.daltonicchameleon.portfolio.di.register.RegisterModule;
 import com.daltonicchameleon.portfolio.presenter.register.RegisterPresenter;
+import com.daltonicchameleon.portfolio.ui.login.LoginFragment;
 import com.daltonicchameleon.portfolio.ui.main.MainFragment;
 import com.daltonicchameleon.portfolio.ui.toolbar.ToolbarActivity;
 import com.daltonicchameleon.portfolio.util.manager.CallManager;
@@ -57,5 +58,11 @@ public class RegisterFragment extends BaseFragment<FragmentRegisterBinding> impl
     @Override
     public void callMain() {
         callManager.open(getActivity(), ToolbarActivity.class, MainFragment.class, Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+    }
+
+    @Override
+    public void callLogin() {
+        callManager.add(getBaseActivity(), LoginFragment.class);
+        callManager.clearBackStack(getBaseActivity());
     }
 }

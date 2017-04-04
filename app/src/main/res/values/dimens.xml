@@ -5,12 +5,13 @@
     <dimen name="stroke_width">2dp</dimen>
 
     <!-- LOGIN -->
-    <dimen name="login_header_margin">24dp</dimen>
-    <dimen name="login_footer_margin">18dp</dimen>
+    <dimen name="login_footer_header_margin">32dp</dimen>
+
+    <!-- PORTFOLIO -->
+    <dimen name="portfolio_adapter_content_height">280dp</dimen>
 
     <!-- REGISTER -->
-    <dimen name="register_header_margin">24dp</dimen>
-    <dimen name="register_footer_margin">48dp</dimen>
+    <dimen name="register_footer_header_margin">32dp</dimen>
 
     <!-- STYLE -->
     <dimen name="style_form_horizontal_margin">24dp</dimen>

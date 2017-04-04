@@ -6,6 +6,9 @@
         <variable
             name="loading"
             type="boolean"/>
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener"/>
     </data>
 
     <RelativeLayout
@@ -16,7 +19,7 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/login_header_margin"
+            android:layout_margin="@dimen/login_footer_header_margin"
             android:gravity="center"
             android:layout_centerHorizontal="true">
 
@@ -68,18 +71,20 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_margin="@dimen/login_footer_margin">
+            android:layout_margin="@dimen/login_footer_header_margin">
 
             <Button
                 android:id="@+id/btnLoginSend"
                 style="@style/Button.Accent"
-                android:text="@string/login_button_send"/>
+                android:text="@string/login_button_send"
+                android:onClick="@{onClickListener::onClick}"/>
 
             <TextView
                 android:id="@+id/txtLoginRegister"
                 style="@style/TextView.Title.Link"
                 android:gravity="center"
-                android:text="@string/login_register"/>
+                android:text="@string/login_register"
+                android:onClick="@{onClickListener::onClick}"/>
 
         </LinearLayout>
 

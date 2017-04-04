@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/tools">
 
-    <LinearLayout
-        style="@style/AppTheme.Dark"
-        android:id="@+id/lnrMainContent"
-        android:orientation="vertical">
+    <data>
+        <variable
+            name="loading"
+            type="boolean"/>
+    </data>
 
-    </LinearLayout>
+    <RelativeLayout
+        style="@style/AppTheme.Dark">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rclMainContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <include
+            layout="@layout/view_loading"
+            bind:loading="@{loading}"/>
+
+    </RelativeLayout>
 
 </layout>
