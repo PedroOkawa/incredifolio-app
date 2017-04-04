@@ -1,5 +1,6 @@
 package com.daltonicchameleon.portfolio.model;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ public class Portfolio {
     private String name;
     private String description;
     private String image;
-    private long createdAt;
+    private Date createdAt;
     private List<Screenshot> screenshots;
 
     public String getId() {
@@ -48,11 +49,11 @@ public class Portfolio {
         this.image = image;
     }
 
-    public long getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(long createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 

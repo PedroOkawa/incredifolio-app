@@ -4,6 +4,7 @@ import com.daltonicchameleon.portfolio.di.scope.Fragment;
 import com.daltonicchameleon.portfolio.presenter.main.MainPresenter;
 import com.daltonicchameleon.portfolio.presenter.main.MainPresenterImpl;
 import com.daltonicchameleon.portfolio.ui.main.MainView;
+import com.daltonicchameleon.portfolio.util.manager.ApiManager;
 
 import dagger.Module;
 import dagger.Provides;
@@ -25,8 +26,8 @@ public class MainModule {
 
     @Fragment
     @Provides
-    public MainPresenter providesMainPresenter(MainView mainView) {
-        return new MainPresenterImpl(mainView);
+    public MainPresenter providesMainPresenter(ApiManager apiManager, MainView mainView) {
+        return new MainPresenterImpl(apiManager, mainView);
     }
 
 }
