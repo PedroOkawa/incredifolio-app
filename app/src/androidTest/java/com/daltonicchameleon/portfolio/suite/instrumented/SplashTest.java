@@ -76,7 +76,7 @@ public class SplashTest {
         testHelper.startLargeDelay();
 
         /* Validates if the current layout shown is the main screen */
-        testHelper.validateViewVisibility(R.id.lnrMainContent);
+        testHelper.validateViewVisibility(R.id.rltMainContent);
     }
 
     /* ERROR CASES */

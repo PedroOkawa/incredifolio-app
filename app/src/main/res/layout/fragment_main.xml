@@ -9,6 +9,7 @@
     </data>
 
     <RelativeLayout
+        android:id="@+id/rltMainContent"
         style="@style/AppTheme.Dark">
 
         <android.support.v7.widget.RecyclerView
