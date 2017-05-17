@@ -38,12 +38,12 @@ public class ApiManager {
 
     /** PORTFOLIO **/
 
-    public void listPortfolios(final ApiCallback<List<Portfolio>> apiCallback, long startDate, int perPage) {
+    public void listPortfolios(final ApiCallback<List<Portfolio>> apiCallback, long startDate) {
         if(hasTokenStored(apiCallback)) {
             Map<String, String> options = new HashMap<>();
 
             options.put(Constants.API_SERVICE_QUERY_START_DATE, String.valueOf(startDate));
-            options.put(Constants.API_SERVICE_QUERY_PER_PAGE, String.valueOf(perPage));
+            options.put(Constants.API_SERVICE_QUERY_PER_PAGE, Constants.API_MANAGER_PORTFOLIOS_PER_PAGE);
 
             apiService
                     .listPortfolios(accountHelper.getCurrentToken(), options)

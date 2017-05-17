@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:id="@+id/rltMainContent"
-        style="@style/AppTheme.Dark">
+        style="@style/AppTheme.Main">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rclMainContent"

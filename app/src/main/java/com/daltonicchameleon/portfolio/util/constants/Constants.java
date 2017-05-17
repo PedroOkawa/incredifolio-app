@@ -9,6 +9,9 @@ import android.support.annotation.IdRes;
  */
 public class Constants {
 
+    /** API MANAGER **/
+    public static final String API_MANAGER_PORTFOLIOS_PER_PAGE = "10";
+
     /** API MODULE **/
     public static final int API_MODULE_TIMEOUT = 60;
     public static final String API_MODULE_URL = "https://api.daltonicchameleon.com/";
@@ -41,6 +44,9 @@ public class Constants {
     public static final int DELAY_SMALL = 1000;
     public static final int DELAY_MEDIUM = 2500;
     public static final int DELAY_LARGE = 5000;
+
+    /** ENDLESS SCROLL LISTENER **/
+    public static final int ENDLESS_SCROLL_LISTENER_THRESHOLD = 5;
 
     /** FILE HELPER **/
     public static final String FILE_HELPER_BYTES_UTF8 = "UTF-8";

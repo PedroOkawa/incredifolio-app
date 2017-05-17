@@ -9,7 +9,7 @@
     </data>
 
     <FrameLayout
-        style="@style/AppTheme.Loading"
+        style="@style/AppTheme.Foreground"
         android:clickable="true"
         android:visibility="@{loading ? View.VISIBLE : View.GONE}">
 

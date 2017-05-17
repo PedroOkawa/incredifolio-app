@@ -25,6 +25,7 @@ public class PortfolioAdapter extends BindingAdapter<Portfolio, AdapterPortfolio
 
     @Override
     protected void doOnBindViewHolder(ViewHolder viewHolder, Portfolio portfolio, int position) {
+        viewHolder.getDataBinding().txtAdapterPortfolioName.setText(portfolio.getName());
         Glide.with(getContext())
                 .load(portfolio.getImage())
                 .into(viewHolder.getDataBinding().imgAdapterPortfolioImage);

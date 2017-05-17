@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="empty"
+            type="boolean"/>
+        <variable
+            name="message"
+            type="int"/>
+    </data>
+
+    <LinearLayout
+        style="@style/AppTheme.Foreground"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:visibility="@{empty ? View.VISIBLE : View.GONE}">
+
+        <ImageView
+            android:id="@+id/imgEmptySign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_empty"/>
+
+        <TextView
+            style="@style/TextView.Title.Accent"
+            android:text="@{message}"
+            tools:text="Não há portfolios"/>
+
+    </LinearLayout>
+
+</layout>

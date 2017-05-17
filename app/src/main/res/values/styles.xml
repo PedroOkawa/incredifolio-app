@@ -7,14 +7,20 @@
         <item name="colorAccent">@color/color_accent</item>
     </style>
 
-    <style name="AppTheme.Dark">
-        <item name="android:background">@color/color_background_dark</item>
+    <style name="AppTheme.Initial">
+        <item name="android:background">@drawable/splash_background</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
     </style>
 
-    <style name="AppTheme.Loading">
-        <item name="android:background">@color/color_background_loading</item>
+    <style name="AppTheme.Main">
+        <item name="android:background">@color/color_background_main</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="AppTheme.Foreground">
+        <item name="android:background">@color/color_background_foreground</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
     </style>

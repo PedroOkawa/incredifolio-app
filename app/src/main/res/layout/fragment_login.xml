@@ -12,7 +12,7 @@
     </data>
 
     <RelativeLayout
-        style="@style/AppTheme.Dark">
+        style="@style/AppTheme.Initial">
 
         <LinearLayout
             android:id="@+id/lnrLoginHeader"
